@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "My life Balance",
+    "slug": "my-life-balance",
+    "icon": "assets/icon.png",
+    "android": {
+      "package": "com.anonymous.mybalance"
+    }
+  }
+}

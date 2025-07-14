@@ -1,0 +1,44 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Expo
+.expo/
+.expo-shared/
+
+# macOS
+.DS_Store
+
+# Android
+android/build/
+android/app/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/*.iml
+android/*.hprof
+android/.cxx/
+
+# iOS
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+ios/Podfile
+ios/*.xcworkspace
+ios/*.xcodeproj
+ios/*.pbxproj
+ios/*.xcuserstate
+ios/*.xcuserdata
+ios/.DS_Store
+
+# Bundle artifacts
+*.jsbundle
+
+# Misc
+*.log
+*.tmp
+*.swp
+
+# VSCode
+.vscode/
