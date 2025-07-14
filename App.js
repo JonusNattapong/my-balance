@@ -125,15 +125,17 @@ export default function App() {
           onChangeText={setTask}
           placeholderTextColor="#b2bec3"
         />
-        <View style={styles.inputRow}>
-          <TouchableOpacity style={styles.dateBtn} onPress={() => setShowPicker(true)}>
-            <Ionicons name="calendar" size={18} color="#fff" />
-            <Text style={styles.dateBtnText}> เลือกวันที่และเวลา</Text>
-          </TouchableOpacity>
-          <Text style={styles.dateText}>
-            {date.toLocaleString('th-TH', { dateStyle: 'short', timeStyle: 'short' })}
-          </Text>
-        </View>
+      <View style={styles.inputRow}>
+        <TouchableOpacity style={styles.dateBtnModern} onPress={() => setShowPicker(true)} activeOpacity={0.85}>
+          <View style={styles.dateIconWrap}>
+            <Ionicons name="calendar" size={22} color="#0984e3" />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.dateBtnLabel}>เลือกวันที่และเวลา</Text>
+            <Text style={styles.dateBtnValue}>{date.toLocaleString('th-TH', { dateStyle: 'short', timeStyle: 'short' })}</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
         {showPicker && (
           <DateTimePicker
             value={date}
@@ -422,24 +424,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     color: '#2d3436',
   },
-  dateBtn: {
-    backgroundColor: '#00b894',
-    borderRadius: Math.max(6, 8 * scale),
-    paddingVertical: Math.max(6, 8 * scale),
-    paddingHorizontal: Math.max(8, 12 * scale),
-    alignSelf: 'flex-start',
+  dateBtnModern: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#eaf6ff',
+    borderRadius: Math.max(10, 14 * scale),
+    paddingVertical: Math.max(10, 14 * scale),
+    paddingHorizontal: Math.max(12, 18 * scale),
     marginBottom: Math.max(2, 4 * scale),
+    shadowColor: '#0984e3',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.10,
+    shadowRadius: 4,
+    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#d0e6fa',
   },
-  dateBtnText: {
-    color: '#fff',
-    fontSize: Math.max(14, 16 * scale),
+  dateIconWrap: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 6,
+    marginRight: 12,
+    borderWidth: 1,
+    borderColor: '#d0e6fa',
+    shadowColor: '#0984e3',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  dateBtnLabel: {
+    fontSize: Math.max(15, 17 * scale),
+    color: '#0984e3',
     fontWeight: 'bold',
+    marginBottom: 2,
   },
-  dateText: {
+  dateBtnValue: {
     fontSize: Math.max(14, 16 * scale),
     color: '#636e72',
-    marginBottom: Math.max(6, 8 * scale),
-    textAlign: 'center',
+    fontWeight: '500',
   },
   addBtn: {
     backgroundColor: '#0984e3',
